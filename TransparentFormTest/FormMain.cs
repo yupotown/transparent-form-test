@@ -16,5 +16,20 @@ namespace TransparentFormTest
         {
             InitializeComponent();
         }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            var bmp = new Bitmap("trimg.png");
+            var transKey = Color.White;
+            bmp.MakeTransparent(transKey);
+            this.BackgroundImage = bmp;
+            this.BackColor = transKey;
+            this.TransparencyKey = transKey;
+        }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
